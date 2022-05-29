@@ -70,10 +70,7 @@ public:
     }
     bool isEmpty()
     {
-        if (head == nullptr)
-            return true;
-        else
-            return false;
+        return head==nullptr;
     }
     void traverse()
     { // all elements will be popped
