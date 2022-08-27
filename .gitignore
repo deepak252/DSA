@@ -5,3 +5,6 @@ sorting/Quicksort.cpp
 
 binary_search_tree/
 graph/
+
+.vscode/
+temp.cpp
