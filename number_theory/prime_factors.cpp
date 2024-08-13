@@ -38,7 +38,7 @@ using namespace std;
 //   return prime_factors;
 // }
 
-set<int> findAllPrimeFactors(int num)
+vector<int> findAllPrimeFactors(int num)
 {
   set<int> prime_factors;
   while (num % 2 == 0)
@@ -55,12 +55,12 @@ set<int> findAllPrimeFactors(int num)
     }
   }
   if(num>2) prime_factors.insert(num);
-  return prime_factors;
+  return vector<int>(prime_factors.begin(), prime_factors.end());
 }
 
 int main()
 {
-  set<int> prime_factors = findAllPrimeFactors(30);
+  auto prime_factors = findAllPrimeFactors(720720);
   show(prime_factors);
   return 0;
 }

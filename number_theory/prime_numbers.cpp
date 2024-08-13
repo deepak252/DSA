@@ -29,7 +29,8 @@ vector<int> findAllPrimes(int num){
 }
 
 int main(){
-  vector<int> primes = findAllPrimes(30);
+  vector<int> primes = findAllPrimes(sqrt(100000));
+  cout<<primes.size()<<endl;
   show(primes);
   return 0;
 }
