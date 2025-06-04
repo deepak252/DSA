@@ -21,11 +21,11 @@ private:
     }
 
     int rangeQuery(int ind, int low, int high, int l, int r){
-        if(l<=low && r>=high){
-            return seg[ind];
-        }
-        if(r<low || l>high){
+        if(high<l || low>r){
             return INT_MIN;
+        }
+        if(low>=l && high<=r){
+            return seg[ind];
         }
         int mid = (low+high)/2;
         int left = rangeQuery(2*ind+1, low, mid, l, r);
