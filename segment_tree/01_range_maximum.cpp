@@ -35,17 +35,31 @@ private:
         return max(left, right);
     }
     // i: tree index(seg tree), node: array index
+    // void pointUpdate(int i, int low, int high, int node, int& newVal){
+    //     if(low==high){
+    //         seg[i] = newVal;
+    //         return;
+    //     }
+    //     int mid = (low+high)>>1;
+    //     if(node<=mid){
+    //         pointUpdate(2*i+1, low, mid, node, newVal);
+    //     }else{
+    //         pointUpdate(2*i+2, mid+1, high, node, newVal);
+    //     }
+    //     seg[i] = max(seg[2*i+1], seg[2*i+2]);
+    // }
+
     void pointUpdate(int i, int low, int high, int node, int& newVal){
+        if(node<low || node>high){
+            return;
+        }
         if(low==high){
             seg[i] = newVal;
             return;
         }
-        int mid = (low+high)>>1;
-        if(node<=mid){
-            pointUpdate(2*i+1, low, mid, node, newVal);
-        }else{
-            pointUpdate(2*i+2, mid+1, high, node, newVal);
-        }
+        int mid = (low+high)/2;
+        pointUpdate(2*i+1, low, mid, node, newVal);
+        pointUpdate(2*i+2, mid+1, high, node, newVal);
         seg[i] = max(seg[2*i+1], seg[2*i+2]);
     }
 
