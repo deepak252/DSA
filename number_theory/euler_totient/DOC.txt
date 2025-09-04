@@ -1,0 +1,62 @@
+
+Euler’s Totient Function (φ) :
+
+The Euler Totient Function φ(n) counts how many integers in [1,n] are coprime (i.e. gcd = 1) with n.
+
+φ(n) = number of integers 1 ≤ k ≤ n such that gcd(k, n) = 1
+
+φ(n) = n*(1 - 1/p1)*(1 - 1/p2)*....*(1 - 1/pk)
+
+------------------------------------------------------
+Properties:
+
+1. Value for primes:
+   If p is prime → φ(p) = p - 1
+
+2. Value for prime powers:
+   φ(p^k) = p^k - p^(k-1) = p^k * (1 - 1/p)
+
+3. Multiplicativity:
+   If gcd(m, n) = 1 → φ(mn) = φ(m) * φ(n)
+
+4. General formula:
+   If n = p1^a1 * p2^a2 * ... * pk^ak
+   φ(n) = n * ∏(1 - 1/pi)   [product over distinct primes]
+
+5. Divisor sum identity:
+   ∑(φ(d)) over all divisors d of n = n
+
+6. Euler’s theorem:
+   If gcd(a, n) = 1 → a^φ(n) ≡ 1 (mod n)
+
+7. Special case (Fermat’s Little Theorem):
+   If p is prime and gcd(a, p) = 1 → a^(p-1) ≡ 1 (mod p)
+
+8. Average order:
+   φ(n) ~ (6/π^2) * n
+   (since probability two random integers are coprime = 6/π^2)
+
+9. Bounds:
+   For n > 1:  1 ≤ φ(n) ≤ n - 1
+   - Minimum at powers of 2
+   - Maximum at primes
+
+10. Factorial relation:
+    φ(n!) = ∏ (p^(ap-1) * (p-1)) for primes p ≤ n
+    where ap = exponent of p in n!
+
+11. Dirichlet convolution identity:
+    φ(n) = n * ∑ (μ(d)/d) over all divisors d of n
+    (where μ is Möbius function)
+------------------------------------------------------
+Examples:
+φ(1) = 1
+φ(2) = 1
+φ(3) = 2
+φ(4) = 2
+φ(5) = 4
+φ(6) = 2
+φ(7) = 6
+φ(8) = 4
+φ(9) = 6
+φ(10) = 4
