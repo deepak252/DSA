@@ -1,0 +1,43 @@
+1. Array Representation of Binary Tree :
+
+If a node is at index i,
+its left child is at - 2*i
+its right child is at - 2*i+1
+its parent is at i/2
+
+2. Complete Binary Tree and Full Binary Tree
+
+A Full Binary Tree has all levels completely filled.
+In a Full Binary Tree, no. of nodes = 2^(h+1) - 1
+NOTE: height of root node = 0
+
+A Complete Binary Tree has all levels completely filled except possibly the last, where all nodes are filled from left to right.
+
+3. Max Heap vs Min Heap
+Min Heap:
+    Every parent node ≤ its children
+    means the smallest element is always at the root.
+Max Heap:
+    Every parent node >= its children
+    means the largest element is always at the root.
+
+Lets discuss Max Heap:
+Insertion: always happens from the Last Node
+    Here adjustment is done from Leaf to Root
+    1. Delete Last Node
+    2. Do adjustment
+
+Deletion: We can delete only root node (min/max element)
+    Here adjustment is done from Root to Leaf
+    1. Delete root
+    2. Place last element to root
+    3. Do adjustment
+
+4. Heap Sort
+    When we delete the root node from a Heap, we place the deleted element at the last available index of the array.
+    By performing delete operation n times, the resulting array will be sorted.
+    Time Complexity: O(nlog(n))
+
+5. Heapify
+    Process of creating a Heap, Operation used to restore the heap property.
+    Time Complexity: O(n)
