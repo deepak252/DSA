@@ -39,4 +39,14 @@ int main()
         solve(i);
     }
 
+    // auto start = chrono::high_resolution_clock::now();
+    
+    // bool is_prime = isPrime(num);
+
+    // auto end = chrono::high_resolution_clock::now();
+
+    // chrono::duration<double, milli> duration = end - start;
+
+    // cout<<is_prime<<endl;
+    // cout << "Execution time: " << duration.count() << " ms\n"; // 117.416 ms
 }
